@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppConfigService } from './app-config.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(
+    public readonly universalConfigService: AppConfigService,
+  ) {
+    this.title = universalConfigService.get<string>('foo');
+  }
 }

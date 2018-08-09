@@ -1,7 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AppConfigModule } from './app-config.module';
 
 export const APP_ID = 'my-app';
 
@@ -10,7 +11,9 @@ export const APP_ID = 'my-app';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: APP_ID })
+    BrowserModule.withServerTransition({ appId: APP_ID }),
+    BrowserTransferStateModule,
+    AppConfigModule,
   ],
   providers: [],
   bootstrap: [ AppComponent ]
