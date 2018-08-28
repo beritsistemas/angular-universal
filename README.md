@@ -7,12 +7,17 @@ It uses serverless framework
 
 ## Run
 npm install -g serverless
+
 npm i
+
 npm run dev (local dev server, use it when developing)
+
 npm run dev:serverless (local serverless offline server, try it before deploy:dev)
 
 ## Deploy
+
 npm run deploy:dev
+
 npm run deploy:prod
 
 
