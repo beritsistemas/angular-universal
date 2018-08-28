@@ -49,8 +49,48 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "deployUrl": "/prod/"
             }
+            ,"serverless-stage": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "deployUrl": "/stage/"
+            }
+            ,
+            "serverless-dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "deployUrl": "/dev/"
+            }
+            ,
+            "serverless-local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.serverless.ts"
+                }
+              ],
+              "deployUrl": "/"
+            }
+
           }
         },
         "serve": {
@@ -79,6 +119,13 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },"serverless-local": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.serverless.ts"
+                }
+              ]
             }
           }
         },
@@ -92,6 +139,21 @@
             "production": {
               "browserTarget": "ng-universal:build:production",
               "serverTarget": "ng-universal:server:production",
+              "verbose": true
+            }
+            ,"serverless-stage": {
+              "browserTarget": "ng-universal:build:serverless-stage",
+              "serverTarget": "ng-universal:server:production",
+              "verbose": true
+            }
+            ,"serverless-dev": {
+              "browserTarget": "ng-universal:build:serverless-dev",
+              "serverTarget": "ng-universal:server:production",
+              "verbose": true
+            }
+            ,"serverless-local":{
+              "browserTarget": "ng-universal:build:serverless-local",
+              "serverTarget": "ng-universal:server:serverless-local",
               "verbose": true
             }
           }

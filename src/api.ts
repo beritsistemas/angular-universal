@@ -11,6 +11,13 @@ export function createApi(distPath: string, ngSetupOptions: NgSetupOptions) {
   // Angular Express Engine
   api.engine('html', ngExpressEngine(ngSetupOptions));
 
+
+
+  api.get('/api/test', (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end("hola1");
+  })
+
   // Server static files from distPath
   api.get('*.*', express.static(distPath));
 
