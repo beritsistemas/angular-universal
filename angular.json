@@ -90,13 +90,18 @@
               ],
               "deployUrl": "/"
             }
+            ,   
+            "dev": {
+              
+              "deployUrl": "/"
+            }
 
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-universal:build"
+            "browserTarget": "ng-universal:build:dev"
           },
           "configurations": {
             "production": {

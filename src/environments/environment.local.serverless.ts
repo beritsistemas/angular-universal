@@ -6,6 +6,7 @@
 export const environment = {
   production: false
   ,serverless:true
+  ,endpoint:"http://localhost:3000"
 };
 
 /*

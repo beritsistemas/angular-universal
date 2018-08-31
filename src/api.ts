@@ -14,8 +14,7 @@ export function createApi(distPath: string, ngSetupOptions: NgSetupOptions) {
 
 
   api.get('/api/test', (req, res) => {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end("hola1");
+    res.json({title:"Api Response"})
   })
 
   // Server static files from distPath

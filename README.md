@@ -27,6 +27,13 @@ https://github.com/enten/angular-universal
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
+## Added to angular-universal (original project)
+
+1- Aws serverless
+
+2- Api endpoint (/api/test)
+
+3- Transfer State
 
 ## About
 
@@ -47,6 +54,7 @@ It combines [@angular/cli](https://github.com/angular/angular-cli/tree/v6.0.0) a
     * [webpack/hot/poll](https://github.com/webpack/webpack/blob/v4.6.0/hot/poll.js) to enable hmr on server side
     * [webpack-hot-middleware](https://github.com/webpack-contrib/webpack-hot-middleware) (dynamically mounted on server) and [@angularclass/hmr](https://github.com/gdi2290/angular-hmr) to enable hmr on
 
+* Angular Transfer State so you don't call api endpoint twice
 * [serverless](https://serverless.com) as serverless framework
 * [serverless-offline](https://github.com/dherault/serverless-offline) to run serverless locally 
 
