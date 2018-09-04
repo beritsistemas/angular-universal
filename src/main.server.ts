@@ -28,6 +28,8 @@ export const getNgRenderMiddlewareOptions = () => ({
   ]
 });
 
+let server;
+
 // Faster server renders w/ Prod mode (dev mode never needed)
 if(!environment.serverless)
   enableProdMode();//this is not working in serverless, why??
@@ -39,7 +41,7 @@ let requestListener = createApi(BROWSER_DIST_PATH, getNgRenderMiddlewareOptions(
 if(!environment.serverless){
   console.log("LOCAL DEV SERVER")
 // Start up the Node server
-const server = createServer((req, res) => {
+server = createServer((req, res) => {
   requestListener(req, res);
 });
 
@@ -66,4 +68,4 @@ server.listen(PORT, () => {
   module.exports.api = requestListener;
 }
 
-
+export default server;
